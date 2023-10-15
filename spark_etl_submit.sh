@@ -9,7 +9,7 @@ export IMAGE_NAME=$POD_NAME:0.0.1
 
 spark-submit \
   --master=k8s://$K8S_SERVER \
-  --name $POD_NAME --conf spark.executor.instances=1 \
+  --name $POD_NAME \
   --deploy-mode cluster \
   --name $POD_NAME \
   --conf spark.kubernetes.container.image=$IMAGE_NAME \
