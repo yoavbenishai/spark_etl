@@ -12,7 +12,6 @@ df = spark.read.option("header", True).csv(f"file://{source_dir}/zipcodes.csv")
 df = df.select("State")
 df = df.distinct()
 print(f"writing to {target_dir}")
-# df.write.format("csv").mode('overwrite').save(f"{target_dir}")
 
 df.show()
 df.write.format("csv").mode('overwrite').save(f"file://{target_dir}/result")
